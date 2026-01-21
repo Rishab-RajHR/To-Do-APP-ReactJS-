@@ -1,10 +1,11 @@
 import React from 'react'
+import Todo from './components/Todo'
 
 const App = () => {
   return (
-    <div>
-      <h2>This is App.jsx file</h2>
-    </div>
+   <Provider>
+      <Todo />
+   </Provider>
   )
 }
 
