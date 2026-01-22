@@ -12,4 +12,4 @@ Helps users stay organized by managing daily tasks efficiently
 
 Easy to extend with features like local storage, filters, or due dates
 
-Ideal for beginners to understand CRUD operations in React
+Ideal for beginners to understand CRUD operations in (React)
