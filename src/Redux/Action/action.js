@@ -9,6 +9,7 @@ export const toggleTodo = (text) => ({
      type : TOGGLE_TODO,
      palyLoad: {text}
 })
+// Todo app for removing
 export const removeTodo = (text) => ({
      type : REMOVE_TODO,
      palyLoad: {text}
