@@ -14,6 +14,7 @@ export const removeTodo = (text) => ({
      type : REMOVE_TODO,
      palyLoad: {text}
 })
+// Todo app for mark completed
 export const markCompleted = (text) => ({
      type : MARK_COMPLETED_TODO,
      palyLoad: {text}
