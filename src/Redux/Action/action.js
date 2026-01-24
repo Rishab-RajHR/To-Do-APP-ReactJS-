@@ -4,6 +4,7 @@ export const addTodo = (text) => ({
      type : ADD_TODO,
      palyLoad: {text}
 })
+// Todo app for toggling
 export const toggleTodo = (text) => ({
      type : TOGGLE_TODO,
      palyLoad: {text}
