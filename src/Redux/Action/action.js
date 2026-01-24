@@ -19,18 +19,22 @@ export const markCompleted = (text) => ({
      type : MARK_COMPLETED_TODO,
      palyLoad: {text}
 })
+// Todo app for markInCompleted
 export const markInCompleted = (text) => ({
      type : MARK_INCOMPLETE_TODO,
      palyLoad: {text}
 })
+// Todo app for filtering
 export const filterTodo = (filter) => ({
      type : FILTER_TODO,
      palyLoad: {filter}
 })
+// Todo app for Updating Search Todo
 export const updateSearchTodo = (search) => ({
      type : SEARCH_TODO,
      palyLoad: {search}
 })
+// Todo app for Mark All Completed
 export const markAllCompleted = () => ({
      type : MARK_ALL_COMPLETED_TODO,
 })
