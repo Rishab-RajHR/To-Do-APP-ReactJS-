@@ -1,5 +1,5 @@
 import { ADD_TODO, FILTER_TODO, MARK_ALL_COMPLETED_TODO, MARK_COMPLETED_TODO, MARK_INCOMPLETE_TODO, REMOVE_TODO, SEARCH_TODO, TOGGLE_TODO } from "./actionTypes"
-
+// Todo app for adding files
 export const addTodo = (text) => ({
      type : ADD_TODO,
      palyLoad: {text}
