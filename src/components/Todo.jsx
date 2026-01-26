@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux"
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import { addTodo } from "../Redux/Action/action";
+import { addTodo, updateSearchTodo } from "../Redux/Action/action";
 import FilterButton from "./FilterButton";
 const Todo = () => {
   const dispatch = useDispatch();
-  const [todoText, setTodoText] = useState();
+  const [todoText, setTodoText] = useState("");
+  const [searchText, setSearchText] = useState("");
   const handleAddTodo = (text) => {
       dispatch(addTodo(text));
   }
@@ -14,6 +15,9 @@ const Todo = () => {
         handleAddTodo(todoText.trim());
         setTodoText("");
      }
+  }
+  const handleSearchTodo = (value) => {
+      dispatch(updateSearchTodo(value))
   }
   return (
     <div className="max-w-4xl mx-auto sm:mt-8 p-4 bg-blue-200 rounded">
@@ -33,6 +37,16 @@ const Todo = () => {
        {/* Filter Search */}
        <div className="flex items-center justify-between flex-wrap">
             <FilterButton />
+        {/* Search */}
+        <div className="flex items-center justify-end mt-4 sm:mt-0">
+         <input
+           type="text"
+           placeholder="Search"
+           value={searchText}
+           name="text"
+           onChange={(e) => handleSearchTodo(e.target.value)}
+         />
+        </div>
        </div>
     </div>
   )

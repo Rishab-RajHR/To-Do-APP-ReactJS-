@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { filterTodo } from '../Redux/Action/action';
+import { filterTodo, markAllCompleted } from '../Redux/Action/action';
 
 const FilterButton = () => {
     const dispatch = useDispatch();
@@ -11,13 +11,15 @@ const FilterButton = () => {
   return (
     <div className="flex space-x-4 items-center">
        <select
-         value={}
+         value={currentFilter}
+         onChange={(e) => handleFilter(e.target.value)}
          className="text-sm px-2 py-1 border-blue-300 focus:outline-none"
        >
         <option value='ALL'>Default</option>
         <option value='COMPLETED'>Completed</option>
         <option value='INCOMPLETE'>InCompleted</option>
        </select>
+       <button onClick={() => dispatch(markAllCompleted())} className='text-sm px-2 py-1 bg-blue-700 text-white ml-2 rounded'>Mark All Completed</button>
     </div>
   )
 }
