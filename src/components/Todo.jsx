@@ -27,7 +27,7 @@ const Todo = () => {
          <input
            type="text"
            placeholder="Enter Your Task"
-           className="flex-grow p-2 border-b-2 border-gray-300 rounded focus:outline none focus:border-blue-500"
+           className="flex-grow rounded p-2 border-b-2 border-gray-300 focus:outline none focus:border-blue-500 sm:mr-4"
            name="text"
            id="addTodo"
            onChange={(e) => setTodoText(e.target.value) }
