@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react'
 import { useSelector } from 'react-redux'
+import TodoItems from './TodoItems';
 
 const List = () => {
    const filterTodos = useSelector((state) => {
@@ -22,7 +23,9 @@ const List = () => {
    return(
     <ul>
         {
-            
+            filteredTodos.map((todo, i) => (
+                 <TodoItems key={i} todo={todo} index={i} />
+            ))
         }
     </ul>
    )
