@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux"
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import { addTodo, updateSearchTodo } from "../Redux/Action/action";
+import { addTodo, updateSearchTodo } from "../Redux/Action/action.js";
 import FilterButton from "./FilterButton";
+import List from "./List";
 const Todo = () => {
   const dispatch = useDispatch();
   const [todoText, setTodoText] = useState("");
@@ -17,6 +18,7 @@ const Todo = () => {
      }
   }
   const handleSearchTodo = (value) => {
+    setSearchText(value)
       dispatch(updateSearchTodo(value))
   }
   return (
@@ -48,6 +50,7 @@ const Todo = () => {
          />
         </div>
        </div>
+       <List />
     </div>
   )
 }

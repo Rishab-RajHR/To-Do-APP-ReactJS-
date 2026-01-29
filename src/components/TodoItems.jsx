@@ -1,4 +1,8 @@
 import { useDispatch } from "react-redux"
+import { removeTodo, toggleTodo ,markCompleted, markInCompleted} from "../Redux/Action/action";
+import { BsToggle2Off, BsToggle2On } from "react-icons/bs";
+import { FaTrash , FaCheck } from "react-icons/fa";
+import { ImCross } from "react-icons/im";
 
 const TodoItems = ({todo, index}) => {
   const dispatch = useDispatch();
@@ -13,9 +17,30 @@ const TodoItems = ({todo, index}) => {
          onClick={() => dispatch(toggleTodo(index))}
         className="mr-2 text-sm bg-blue-500 text-white sm:px-2 py-1 px-1 rounded">
           {
-             todo.completed ? 
+             todo.completed ? <BsToggle2Off/> : <BsToggle2On />
           }
         </button>
+        <button
+         onClick={() => dispatch(removeTodo(index))}
+        className="mr-2 text-sm bg-red-500 text-white sm:px-2 px-1 py-1 rounded">
+          <FaTrash />
+        </button>
+        {!todo.completed && (
+            <button 
+            className="mr-2 text-sm bg-yellow-500 text-white sm:px-2 py-1 px-1 rounded"
+             onClick={() => dispatch(markCompleted(index))}
+            >
+                 <ImCross />
+            </button>
+        )}
+        {todo.completed && (
+            <button 
+            className="mr-2 text-sm bg-green-500 text-white sm:px-2 py-1 px-1 rounded"
+             onClick={() => dispatch(markInCompleted(index))}
+            >
+                 <FaCheck />
+            </button>
+        )}
        </div>
     </li>
   )
